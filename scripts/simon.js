@@ -3,7 +3,7 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const level = document.getElementById('level')
-const audios = document.getElementsByTagName('audio');
+const audios = document.getElementsByClassName('sound');
 const btnEmpezar = document.getElementById('btnEmpezar')
 
 const ULTIMO_NIVEL = 10;
@@ -75,15 +75,26 @@ class Juego {
     iluminarSecuencia(){
         for(let i = 0; i < this.nivel; i++){
             const color = this.transformarNumeroAColor(this.secuencia[i]);
-
-            setTimeout(() => this.iluminarColor(color), 1000 * i);
+            
+            setTimeout(() => this.iluminarColor(color), 800 * i);
         }
     }
 
-    iluminarColor(color){
-        this.colores[color].classList.add('light');const numeroColor = this.transformarColorANumero(color);
-        audios[numeroColor].play();
-        setTimeout(() => this.apagarColor(color), 350);
+    iluminarColor(color, elegir = false){
+        this.colores[color].classList.add('light');
+        const numeroColor = this.transformarColorANumero(color);
+        if (elegir){
+            if(numeroColor === this.secuencia[this.subnivel]){
+                audios[numeroColor].play();
+            }else{
+                audios[4].play();
+            }
+        }else{
+            audios[numeroColor].play();
+        }
+
+        
+        setTimeout(() => this.apagarColor(color), 510);
     }
 
     apagarColor(color){
@@ -107,7 +118,7 @@ class Juego {
     elegirColor(evento){
         const nombreColor = evento.target.dataset.color;
         const numeroColor = this.transformarColorANumero(nombreColor);
-        this.iluminarColor(nombreColor);
+        this.iluminarColor(nombreColor, true);
 
         if(numeroColor === this.secuencia[this.subnivel]){
             this.subnivel++;
@@ -129,6 +140,7 @@ class Juego {
     }
 
     ganoElJuego(){
+        level.innerHTML = "";
         swal("HAS GANADO!", "Bien hecho :D", "success")
         .then(this.inicializar)
     }

@@ -18,3 +18,10 @@
     font-style: bold;
     font-weight: 700;
 }
+
+@font-face {
+    font-family: 'Lobster';
+    src: url('../fonts/Lobster/Lobster-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+}

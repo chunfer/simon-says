@@ -9,21 +9,31 @@
     <title>Simón Dice</title>
 </head>
 <body>
-    <audio src="audios/AUD_1.wav"></audio>
-    <audio src="audios/AUD_2.wav"></audio>
-    <audio src="audios/AUD_3.wav"></audio>
-    <audio src="audios/AUD_4.wav"></audio>
+    <div class="audios">
+        <audio class="sound" src="audios/AUD_1.wav"></audio>
+        <audio class="sound" src="audios/AUD_2.wav"></audio>
+        <audio class="sound" src="audios/AUD_3.wav"></audio>
+        <audio class="sound" src="audios/AUD_4.wav"></audio>
+        <audio class="sound" src="audios/AUD_ERROR.wav"></audio>
+    </div>
+    <div class="title">
+        <h1>Simón Dice</h1>
+    </div>  
     <div class="gameboard">
-        <div id="celeste" class="color celeste left" data-color="celeste"></div>
-        <div id="violeta" class="color violeta right" data-color="violeta"></div>
-        <div id="naranja" class="color naranja left" data-color="naranja"></div>
-        <div id="verde" class="color verde right" data-color="verde"></div>
+        <button id="celeste" class="color celeste left" data-color="celeste"></button>
+        <button id="violeta" class="color violeta right" data-color="violeta"></button>
+        <button id="naranja" class="color naranja left" data-color="naranja"></button>
+        <button id="verde" class="color verde right" data-color="verde"></button>
         <div id="counter" class="counter">
             <p>NIVEL</p>
             <h1 id="level"></h1>
         </div>
         <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar</button>
     </div>
+    <div class="link">
+       <p> Hecho por <a href="https://github.com/chunfer">chunfer</a></p>
+    </div>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="scripts/simon.js"></script>
 </body>
