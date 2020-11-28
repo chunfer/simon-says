@@ -6,7 +6,7 @@ const level = document.getElementById('level')
 const audios = document.getElementsByClassName('sound');
 const btnEmpezar = document.getElementById('btnEmpezar')
 
-const ULTIMO_NIVEL = 10;
+const ULTIMO_NIVEL = 3;
 
 class Juego {
     constructor() {
@@ -85,7 +85,11 @@ class Juego {
         const numeroColor = this.transformarColorANumero(color);
         if (elegir){
             if(numeroColor === this.secuencia[this.subnivel]){
-                audios[numeroColor].play();
+                if(this.subnivel === ULTIMO_NIVEL - 1){
+                    audios[5].play();
+                }else{
+                    audios[numeroColor].play();
+                }
             }else{
                 audios[4].play();
             }
@@ -94,7 +98,7 @@ class Juego {
         }
 
         
-        setTimeout(() => this.apagarColor(color), 510);
+        setTimeout(() => this.apagarColor(color), 550);
     }
 
     apagarColor(color){
