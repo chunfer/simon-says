@@ -10,7 +10,7 @@ body {
     display: flex;
     font-family: 'Lato', Arial, sans-serif;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 
 .title{
@@ -35,7 +35,9 @@ body {
     width: var(--board-size);
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto;
+    position: absolute;
+    top: calc(50% - (var(--board-size)/2) - var(--border-size)*2);
+    left: calc(50% - (var(--board-size)/2) - var(--border-size)*2);
     border: calc(var(--border-size)*2) solid var(--border-color);
 }
 
