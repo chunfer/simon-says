@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/simon.png" type="image/png">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Simón Dice</title>
+</head>
+<body>
+    <audio src="audios/AUD_1.wav"></audio>
+    <audio src="audios/AUD_2.wav"></audio>
+    <audio src="audios/AUD_3.wav"></audio>
+    <audio src="audios/AUD_4.wav"></audio>
+    <div class="gameboard">
+        <div id="celeste" class="color celeste left" data-color="celeste"></div>
+        <div id="violeta" class="color violeta right" data-color="violeta"></div>
+        <div id="naranja" class="color naranja left" data-color="naranja"></div>
+        <div id="verde" class="color verde right" data-color="verde"></div>
+        <div id="counter" class="counter">
+            <p>NIVEL</p>
+            <h1 id="level"></h1>
+        </div>
+        <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar</button>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="scripts/simon.js"></script>
+</body>
+</html>

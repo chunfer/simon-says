@@ -1,0 +1,120 @@
+:root{
+    --border-size: 15px;
+    --border-color: #343434;
+}
+
+body {
+    margin: 0;
+    background: #dedede;
+    display: flex;
+    font-family: 'Lato', Arial, sans-serif;
+    align-items: center;
+    height: 100vh;
+}
+
+.gameboard {
+    height: 60vw;
+    width: 60vw;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: calc(var(--border-size)*2) solid var(--border-color);
+    max-height: 30vw;
+    max-width: 30vw;
+}
+
+.color {
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: left;
+}
+
+.celeste {
+    background: #0CB617;
+    border-bottom: var(--border-size) solid var(--border-color);
+    border-right: var(--border-size) solid var(--border-color);
+}
+
+.violeta {
+    background: #FE3626;
+    border-bottom: var(--border-size) solid var(--border-color);
+    border-left: var(--border-size) solid var(--border-color);
+}
+
+.naranja {
+    background: #FEFE00;
+    border-top: var(--border-size) solid var(--border-color);
+    border-right: var(--border-size) solid var(--border-color);
+}
+
+
+.verde {
+    background: #02B4FE;
+    border-top: var(--border-size) solid var(--border-color);
+    border-left: var(--border-size) solid var(--border-color);
+}
+
+.celeste.light{
+    background: #96df9a;
+}
+
+.violeta.light{
+    background: #ff6c62;
+}
+
+.naranja.light{
+    background: #ffff6c;
+}
+
+.verde.light{
+    background: #6bd3ff;
+}
+
+.btn-start {
+    width: 100px;
+    height: 100px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    border-color: rgb(211, 0, 0);
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+}
+
+.counter {
+    width: 14vw;
+    height: 14vw;
+    background: var(--border-color);
+    color: white;
+    border-radius: 50%;;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: calc(50% - 7vw);
+    left: calc(50% - 7vw);
+}
+.counter p, .counter h1{
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
