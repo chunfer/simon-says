@@ -5,8 +5,13 @@ const verde = document.getElementById('verde')
 const level = document.getElementById('level')
 const audios = document.getElementsByClassName('sound');
 const btnEmpezar = document.getElementById('btnEmpezar')
+let ULTIMO_NIVEL = prompt('Ingrese cantidad de niveles (por defecto hay 10):');
 
-const ULTIMO_NIVEL = 3;
+if(ULTIMO_NIVEL){
+    ULTIMO_NIVEL = Number(ULTIMO_NIVEL);
+}else{
+    ULTIMO_NIVEL = 10;
+}
 
 class Juego {
     constructor() {
