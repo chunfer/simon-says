@@ -22,7 +22,7 @@ body {
     font-size: 3rem;
 }
 
-.title h1{
+.title h1, .footer h3{
     margin: 0;
 }
 
@@ -146,20 +146,26 @@ body {
     display: none;
 }
 
-.link{
+.footer{
     position: absolute;
     bottom: 0;
-    right: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 20px;
     font-weight: bold;
 }
 
-.link a{
+.footer a{
     color: orange;
     text-decoration: none;
 }
 
-.link a:hover{
+.footer a:hover{
     color: rgb(255, 206, 116);
 }
 
@@ -179,5 +185,9 @@ body {
         height: 140px;
         top: calc(50% - 70px);
         left: calc(50% - 70px);
+    }
+
+    .footer p{
+        font-size: 18px;
     }
 }

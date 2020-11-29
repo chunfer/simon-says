@@ -3,15 +3,21 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const level = document.getElementById('level')
+const max_level = document.getElementById('max_level');
 const audios = document.getElementsByClassName('sound');
 const btnEmpezar = document.getElementById('btnEmpezar')
-let ULTIMO_NIVEL = prompt('Ingrese cantidad de niveles (por defecto hay 10):');
 
+var highScore = 1;
+max_level.innerHTML = String(highScore);
+
+let ULTIMO_NIVEL = prompt('Ingrese cantidad de niveles (por defecto hay 10):');
 if(ULTIMO_NIVEL){
     ULTIMO_NIVEL = Number(ULTIMO_NIVEL);
 }else{
     ULTIMO_NIVEL = 10;
 }
+
+
 
 class Juego {
     constructor() {
@@ -141,6 +147,10 @@ class Juego {
                     this.ganoElJuego();
                 }else{
                     setTimeout(this.siguienteNivel, 1500);
+                    if(this.nivel > highScore){
+                        highScore = this.nivel;
+                        max_level.innerHTML = String(highScore);
+                    }
                 }
             }
         }else{
