@@ -7,7 +7,7 @@ const max_level = document.getElementById('max_level');
 const audios = document.getElementsByClassName('sound');
 const btnEmpezar = document.getElementById('btnEmpezar')
 
-var highScore = 1;
+let highScore = 1;
 max_level.innerHTML = String(highScore);
 
 let ULTIMO_NIVEL = prompt('Ingrese cantidad de niveles (por defecto hay 10):');
